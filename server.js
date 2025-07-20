@@ -13,7 +13,12 @@ const port = 3000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.use(cors());
+
+app.use(cors({
+  origin: "*", // Or specify just your GitHub URL: "https://rowdybard.github.io"
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"]
+}));
 app.use(express.json());
 app.use(express.static(__dirname));
 
