@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Suspicion Island</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="menu">
+    <h1>Suspicion Island</h1>
+    <button onclick="startGame()">Start Game</button>
+    
+    <audio id="bg-music" src="theme.mp3" loop></audio>
+  </div>
+
+  <div id="game" style="display: none;">
+    <div id="day-display"></div>
+    <p id="action-display"></p>
+    <div id="log"></div>
+    <div id="judgment"></div>
+    <div id="choices"></div>
+    <div id="notepad-container">
+      <h3>Notepad</h3>
+      <textarea id="notepad" rows="12" cols="60" placeholder="Take notes here..."></textarea>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const script = document.createElement("script");
+      script.src = "game.js";
+      document.body.appendChild(script);
+    });
+  </script>
+</body>
+</html>
