@@ -14,7 +14,7 @@ const explorationLocations = [
 ];
 
 async function fetchCharactersFromGPT() {
-  const res = await fetch("/api/gpt-characters", {
+  const res = await fetch("https://suspicion-island.up.railway.app/api/gpt-characters", {
     method: "POST"
   });
   const data = await res.json();
@@ -23,7 +23,7 @@ async function fetchCharactersFromGPT() {
 
 async function generateClueForDay() {
   const killer = suspects.find(s => s.isKiller);
-  const res = await fetch("/api/gpt-clue", {
+  const res = await fetch("https://suspicion-island.up.railway.app/api/gpt-clue", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -37,7 +37,7 @@ async function generateClueForDay() {
 }
 
 async function generateAlibis(clueText) {
-  const res = await fetch("/api/gpt-alibis", {
+  const res = await fetch("https://suspicion-island.up.railway.app/api/gpt-alibis", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
